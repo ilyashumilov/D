@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+
+
+{% block content %}
+
+
+<!--Register-->
+<div class="container py-5">
+	<h1>Register</h1>
+	<form method="POST">
+		{% csrf_token %}
+
+		{{ register_form.email.name }}
+		{{ register_form.email }}
+
+		{{ register_form.username.name }}
+		{{ register_form.username }}
+
+		{{ register_form.password.name }}
+		{{ register_form.password }}
+
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+
+
+{% block content %}
+
+
+<!--Register-->
+<div class="container py-5">
+	<h1>Register</h1>
+	<form method="POST">
+		{% csrf_token %}
+
+		{{ register_form.company.name }}
+		{{ register_form.company }}
+
+		{{ register_form.revenue.name }}
+		{{ register_form.revenue }}
+
+		{{ register_form.fee1.name }}
+		{{ register_form.fee1 }}
+
+        {{ register_form.fee2.name }}
+		{{ register_form.fee2 }}
+		<button class="btn btn-primary" type="submit">Submit</button>
+	</form>
+</div>
+
+{% endblock %}
